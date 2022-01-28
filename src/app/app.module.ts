@@ -13,6 +13,7 @@ import {TopbarModule} from "./shared/modules/topbar/topbar.module";
 import { HomeComponent } from './components/home/home.component';
 import {AuthInterceptorService} from "./shared/services/auth-interceptor.service";
 import {PersistenceService} from "./auth/shared/services/persistence.service";
+import {routerReducer, StoreRouterConnectingModule} from "@ngrx/router-store";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {PersistenceService} from "./auth/shared/services/persistence.service";
     AuthModule,
     appRouter,
     HttpClientModule,
-    StoreModule.forRoot({}),
+    StoreRouterConnectingModule.forRoot(),
+    StoreModule.forRoot({router: routerReducer}),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production

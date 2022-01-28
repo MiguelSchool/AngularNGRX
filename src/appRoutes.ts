@@ -13,7 +13,8 @@ const routes:Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    loadChildren: () => import('src/app/globalFeed/GlobalFeed.module')
+      .then(module => module.GlobalFeedModule)
   },
   {
     path:'login',

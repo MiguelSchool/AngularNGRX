@@ -10,10 +10,10 @@ export class AuthInterceptorService implements HttpInterceptor{
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token: string = this.persistenceService.get('accessToken');
-    request.clone({
+    request = request.clone({
       setHeaders: {
-        Authorization: token
-      }
+        Authorization: token ? `Token ${token}` : '',
+      },
     });
     return next.handle(request);
   }

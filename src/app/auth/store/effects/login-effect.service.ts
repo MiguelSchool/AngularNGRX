@@ -24,7 +24,7 @@ export class LoginEffectService {
       return this.authService.login(request).pipe(
         map((currentUser:CurrentUser) => {
           this.persistenceService.set('accessToken',currentUser.token);
-          console.log(currentUser)
+          //console.log(currentUser)
           return loginSuccessActions({currentUser: currentUser})
         }),
         catchError((errorResponse) => {
