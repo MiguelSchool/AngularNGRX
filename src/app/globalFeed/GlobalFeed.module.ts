@@ -10,6 +10,7 @@ import {StoreModule} from "@ngrx/store";
 import {reducers} from "./store/reducers/feedReducer";
 import {BannerModule} from "../shared/modules/banner/banner.module";
 import {PopularTagsModule} from "../shared/modules/popular-tags/popular-tags.module";
+import {FeedTogglerModule} from "../shared/modules/feed-toggler/feed-toggler.module";
 
 
 
@@ -17,18 +18,19 @@ import {PopularTagsModule} from "../shared/modules/popular-tags/popular-tags.mod
   declarations: [
     GlobalFeedComponent
   ],
-    imports: [
-        CommonModule,
-        feedRouter,
-        FeedModule,
-        EffectsModule.forFeature(
-            [
-                FeedEffectService
-            ]),
-        StoreModule.forFeature('feed', reducers),
-        BannerModule,
-        PopularTagsModule
-    ],
+  imports: [
+    CommonModule,
+    feedRouter,
+    FeedModule,
+    EffectsModule.forFeature(
+      [
+        FeedEffectService
+      ]),
+    StoreModule.forFeature('feed', reducers),
+    BannerModule,
+    PopularTagsModule,
+    FeedTogglerModule
+  ],
   providers: [
     FeedService
   ]

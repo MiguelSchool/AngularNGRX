@@ -17,6 +17,11 @@ const routes:Routes = [
       .then(module => module.GlobalFeedModule)
   },
   {
+    path: 'feed',
+    loadChildren: () => import('src/app/your-feed/your-feed.module')
+      .then(module => module.YourFeedModule)
+  },
+  {
     path:'login',
     loadChildren: () => import('src/app/auth/auth.module')
       .then(module => module.AuthModule)

@@ -14,6 +14,9 @@ import { HomeComponent } from './components/home/home.component';
 import {AuthInterceptorService} from "./shared/services/auth-interceptor.service";
 import {PersistenceService} from "./auth/shared/services/persistence.service";
 import {routerReducer, StoreRouterConnectingModule} from "@ngrx/router-store";
+import {FeedTogglerModule} from "./shared/modules/feed-toggler/feed-toggler.module";
+import {YourFeedComponent} from "./your-feed/components/your-feed/your-feed.component";
+import {YourFeedModule} from "./your-feed/your-feed.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import {routerReducer, StoreRouterConnectingModule} from "@ngrx/router-store";
     BrowserModule,
     AuthModule,
     appRouter,
+    YourFeedModule,
     HttpClientModule,
+    FeedTogglerModule,
     StoreRouterConnectingModule.forRoot(),
     StoreModule.forRoot({router: routerReducer}),
     StoreDevtoolsModule.instrument({

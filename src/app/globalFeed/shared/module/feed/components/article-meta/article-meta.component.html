@@ -1,7 +1,7 @@
 <ng-container  *ngIf="articleProp">
   <div class="article-meta">
     <a [routerLink]="['/profiles', articleProp.author.username]">
-      <img [src]="articleProp.author.image" alt="author image">
+      <img [src]="articleProp.author.image" alt="...">
     </a>
     <div class="info">
       <a [routerLink]="['/profiles', articleProp.author.username]" class="author">
