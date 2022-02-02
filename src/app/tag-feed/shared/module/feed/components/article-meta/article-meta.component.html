@@ -1,0 +1,21 @@
+<ng-container  *ngIf="articleProp">
+  <div class="article-meta">
+    <a [routerLink]="['/profiles', articleProp.author.username]">
+      <img [src]="articleProp.author.image" alt="...">
+    </a>
+    <div class="info">
+      <a [routerLink]="['/profiles', articleProp.author.username]" class="author">
+        {{articleProp.author.username}}
+      </a>
+      <span class="date">{{articleProp.createdAt}}</span>
+    </div>
+    <div class="pull-xs-right">ADD TO FAVORITES</div>
+  </div>
+  <a [routerLink]="['articles', articleProp.slug]" class="preview-link">
+    <h1>{{articleProp.title}}</h1>
+    <p>{{articleProp.description}}</p>
+    <span>Reade more...</span>
+    <app-tag-list [tags]="articleProp.tagList"></app-tag-list>
+  </a>
+</ng-container>
+

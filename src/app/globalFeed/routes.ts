@@ -1,15 +1,11 @@
 import {RouterModule, Routes} from "@angular/router";
 import {GlobalFeedComponent} from "./components/global-feed/global-feed.component";
 
+
 export const routes:Routes = [
   {
     path: '',
     component: GlobalFeedComponent
-  },
-  {
-    path:'/feed',
-    loadChildren: ()=> import('src/app/your-feed/your-feed.module')
-      .then(module => module.YourFeedModule)
   }
 ];
 export const feedRouter = RouterModule.forChild(routes);

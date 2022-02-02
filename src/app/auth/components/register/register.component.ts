@@ -3,7 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {select, Store} from "@ngrx/store";
 import {registerAction} from "../../store/actions/RegisterActions";
 import {Observable} from "rxjs";
-import {isSubmittingSelector, validationErrorsSelector} from "../../store/Selectors";
+import {isSubmittingSelector, validationErrorsSelector} from "../../store/selectors/Selectors";
 import {AppState} from "../../shared/types/AppState";
 import {RegisterRequest} from "../../shared/types/RegisterRequest";
 import {BackendError} from "../../../shared/types/BackendError";

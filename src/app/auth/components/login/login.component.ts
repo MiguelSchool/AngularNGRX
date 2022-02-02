@@ -5,7 +5,7 @@ import {select, Store} from "@ngrx/store";
 import {Observable} from "rxjs";
 import {BackendError} from "../../../shared/types/BackendError";
 import {AppState} from "../../shared/types/AppState";
-import {isSubmittingSelector, validationErrorsSelector} from "../../store/Selectors";
+import {isSubmittingSelector, validationErrorsSelector} from "../../store/selectors/Selectors";
 import {loginActions} from "../../store/actions/LoginActions";
 
 

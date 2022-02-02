@@ -6,6 +6,7 @@
 <div class="sidebar" *ngIf="popularTags$|async as popularTags">
   <p>Popular Tags</p>
   <div class="tag-list"></div>
+  <!--<div>{{popularTags|json}}</div>-->
   <a class="tag-default tag-pill"
      *ngFor="let popularTag of popularTags"
      [routerLink]="['/tags',popularTag]">

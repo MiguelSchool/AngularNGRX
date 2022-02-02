@@ -3,7 +3,7 @@
     <li class="nav-item" *ngIf="(isLoggedIn$|async)">
       <a
         class="nav-link"
-        [routerLink]="['/feed']"
+        [routerLink]="['/home/feed']"
         routerLinkActive="active">
         Your Feed
       </a>
@@ -11,8 +11,9 @@
     <li class="nav-item">
       <a
         class="nav-link"
-        [routerLink]="['/']"
-        routerLinkActive="active">
+        [routerLink]="['/home']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}">
         Global Feed
       </a>
     </li>

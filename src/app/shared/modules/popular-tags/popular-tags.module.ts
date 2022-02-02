@@ -6,9 +6,10 @@ import {LoadingModule} from "../loading/loading.module";
 import {ErrorMessageModule} from "../error-message/error-message.module";
 import {EffectsModule} from "@ngrx/effects";
 import {StoreModule} from "@ngrx/store";
-import {reducers} from "../../../globalFeed/store/reducers/feedReducer";
+
 import {PopularTagsEffectService} from "./store/effects/popular-tags-effect.service";
 import {RouterModule} from "@angular/router";
+import {reducers} from "./store/reducer/PopularTagsReducer";
 
 
 

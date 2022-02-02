@@ -10,9 +10,7 @@ import {catchError, map, of, switchMap} from "rxjs";
 import {PopularTagType} from "../../../../types/PopularTagType";
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PopularTagsEffectService {
 
   constructor(

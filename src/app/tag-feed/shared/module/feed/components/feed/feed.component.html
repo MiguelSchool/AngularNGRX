@@ -1,0 +1,14 @@
+<app-loading *ngIf="isLoading$ | async"></app-loading>
+<app-error-message *ngIf="(error$|async) as error" [message]="error"></app-error-message>
+<div class="feed" *ngIf="feed$ | async as feed">
+  <div class="article-preview" *ngFor="let article of feed.articles">
+    <app-article-meta [article]="article"></app-article-meta>
+  </div>
+  <app-pagination
+  [total]="feed.articlesCount"
+  [limit]="limit"
+  [url]="baseUrl"
+  [currentPage]="currentPage"
+  ></app-pagination>
+</div>
+

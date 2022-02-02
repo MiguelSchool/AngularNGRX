@@ -3,7 +3,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {
   PageNotFoundComponent
 } from "./app/shared/modules/backend-error-messages/components/page-not-found/page-not-found.component";
-import {HomeComponent} from "./app/components/home/home.component";
+
 
 const routes:Routes = [
   {
@@ -17,7 +17,7 @@ const routes:Routes = [
       .then(module => module.GlobalFeedModule)
   },
   {
-    path: 'feed',
+    path: 'home/feed',
     loadChildren: () => import('src/app/your-feed/your-feed.module')
       .then(module => module.YourFeedModule)
   },
@@ -30,6 +30,11 @@ const routes:Routes = [
     path:'register',
     loadChildren: () => import('src/app/auth/auth.module')
       .then(module => module.AuthModule)
+  },
+  {
+    path: 'tags/:slug',
+    loadChildren: () => import('src/app/tag-feed/tag-feed.module')
+      .then(module => module.TagFeedModule)
   },
   {
     path: '**',

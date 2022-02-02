@@ -5,13 +5,13 @@ import {RouterModule} from "@angular/router";
 
 
 
+
 @NgModule({
   declarations: [
     FeedTogglerComponent
   ],
   imports: [
     CommonModule,
-    RouterModule,
     RouterModule
   ],
   exports: [
